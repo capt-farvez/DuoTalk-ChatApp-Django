@@ -33,16 +33,6 @@
             text-align: right;
         }
 
-        /* Input Group */
-        .input-group {
-            margin-top: 20px;
-        }
-
-        /* Last Message Container */
-        .last-message-container {
-            margin-bottom: 20px;
-        }
-
         /* Last Message Style */
         .last-message {
             padding: 10px;
@@ -51,12 +41,28 @@
             margin-bottom: 10px;
         }
 
-        /* Input field for reply */
+        /* Input Field for Reply */
         .last-message input {
             width: 100%;
             padding: 10px;
             margin-top: 10px;
             border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Input Button Style */
+        .last-message button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .last-message button:hover {
+            background-color: #0056b3;
         }
 
         /* Mobile Responsive Styles */
@@ -77,11 +83,11 @@
                 font-size: 14px;
             }
 
-            .input-group input {
+            .last-message input {
                 padding: 8px;
             }
 
-            .input-group button {
+            .last-message button {
                 padding: 8px;
             }
         }
@@ -99,18 +105,19 @@
 
         <!-- Display Latest Message with Input Field -->
         <div class="last-message-container">
-            {% if latest_message %}
-                <div class="last-message">
+            <div class="last-message">
+                {% if latest_message %}
                     <strong>{{ latest_message.sender.username }}:</strong> {{ latest_message.content }}
-                    <form method="POST" class="mt-3">
-                        {% csrf_token %}
-                        <input type="text" name="content" class="form-control" placeholder="Type your reply..." required>
-                        <button type="submit" class="btn btn-success mt-2">Reply</button>
-                    </form>
-                </div>
-            {% else %}
-                <p>No messages yet. Start chatting!</p>
-            {% endif %}
+                {% else %}
+                    <p>No messages yet. Start chatting!</p>
+                {% endif %}
+                <!-- Input Field for Reply (Always visible) -->
+                <form method="POST" class="mt-3">
+                    {% csrf_token %}
+                    <input type="text" name="content" class="form-control" placeholder="Type your reply..." required>
+                    <button type="submit" class="btn btn-success mt-2">Reply</button>
+                </form>
+            </div>
         </div>
 
         <!-- Display Latest 6 Messages -->
