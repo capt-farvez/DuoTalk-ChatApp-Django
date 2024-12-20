@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,22 +16,27 @@
             align-items: center;
             height: 100vh;
         }
+
         .login-container {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            width: 100%;
+            max-width: 400px;
         }
+
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
             text-align: center;
         }
+
         form {
             display: flex;
             flex-direction: column;
         }
+
         input {
             margin-bottom: 15px;
             padding: 10px;
@@ -38,6 +44,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+
         button {
             padding: 10px;
             font-size: 16px;
@@ -47,14 +54,36 @@
             border-radius: 4px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #0056b3;
         }
+
         .error {
             color: red;
             font-size: 14px;
             margin-bottom: 15px;
             text-align: center;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 575px) {
+            .login-container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            input {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 14px;
+            }
         }
     </style>
 </head>

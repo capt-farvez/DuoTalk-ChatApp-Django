@@ -6,14 +6,16 @@
     <title>Chat</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        /* Chat Container */
         .chat-container {
-            max-width: 600px;
-            margin: 50px auto;
+            max-width: 100%;
+            margin: 20px auto;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 10px;
         }
 
+        /* Messages Section */
         .messages {
             max-height: 300px;
             overflow-y: auto;
@@ -26,18 +28,22 @@
             border-bottom: 1px solid #ddd;
         }
 
+        /* Logout Button */
         .logout-button {
             text-align: right;
         }
 
+        /* Input Group */
         .input-group {
             margin-top: 20px;
         }
 
+        /* Last Message Container */
         .last-message-container {
             margin-bottom: 20px;
         }
 
+        /* Last Message Style */
         .last-message {
             padding: 10px;
             background-color: #f9f9f9;
@@ -45,6 +51,7 @@
             margin-bottom: 10px;
         }
 
+        /* Input field for reply */
         .last-message input {
             width: 100%;
             padding: 10px;
@@ -52,6 +59,32 @@
             border-radius: 5px;
         }
 
+        /* Mobile Responsive Styles */
+        @media (max-width: 767px) {
+            .chat-container {
+                padding: 15px;
+            }
+
+            .messages {
+                max-height: 200px;
+            }
+
+            .logout-button {
+                text-align: left;
+            }
+
+            .last-message {
+                font-size: 14px;
+            }
+
+            .input-group input {
+                padding: 8px;
+            }
+
+            .input-group button {
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 <body>

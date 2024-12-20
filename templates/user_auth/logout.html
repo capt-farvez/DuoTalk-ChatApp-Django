@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logged Out</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Page Container */
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 767px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>You have been logged out</h1>
-    <p><a href="{% url 'login' %}">Click here to log in again.</a></p>
+
+    <div class="container">
+        <h1>You have been logged out</h1>
+        <p><a href="{% url 'login' %}" class="btn btn-primary">Click here to log in again.</a></p>
+    </div>
+
 </body>
 </html>
